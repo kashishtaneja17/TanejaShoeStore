@@ -15,7 +15,7 @@ namespace TanejaShoeStore.Models
                 serviceProvider.GetRequiredService<
                     DbContextOptions<TanejaShoeStoreContext>>());
             //lOOKING FOR ANY SHOE
-            if (context.Shoe.Any())
+           // if (context.Shoe.Any())
             {
                 return; //db has been seeded
             }
