@@ -10,8 +10,8 @@ using TanejaShoeStore.Data;
 namespace TanejaShoeStore.Migrations
 {
     [DbContext(typeof(TanejaShoeStoreContext))]
-    [Migration("20231012180722_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231012224242_InitialMigration")]
+    partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

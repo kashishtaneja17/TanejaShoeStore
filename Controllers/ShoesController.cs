@@ -20,9 +20,30 @@ namespace TanejaShoeStore.Controllers
         }
 
         // GET: Shoes
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string shoeCategory,string searchString)
         {
-            return View(await _context.Shoe.ToListAsync());
+            //Use Linq to get list of genres.
+            IQueryable<string> categoryQuery = from m in _context.Shoe
+                                            orderby m.Category
+                                            select m.Category;
+            var shoes = from m in _context.Shoe
+                         select m;
+
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                shoes = shoes.Where(s => s.ModelName.Contains(searchString));
+            }
+            if (!string.IsNullOrEmpty(shoeCategory))
+            {
+                shoes =shoes.Where(x => x.Category == shoeCategory);
+            }
+            var shoeCategoryVM = new ShoeCategoryViewModel
+            {
+               Categories = new SelectList(await categoryQuery.Distinct().ToListAsync()),
+                Shoes = await shoes.ToListAsync()
+            };
+
+            return View(shoeCategoryVM);
         }
 
         // GET: Shoes/Details/5
