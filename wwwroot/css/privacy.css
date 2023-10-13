@@ -1,0 +1,38 @@
+﻿/* Apply styles  */
+body {
+    font-family: Arial, sans-serif;
+    background-color: lightgoldenrodyellow;
+    margin: 0;
+    padding: 0;
+}
+
+
+h1 {
+    font-size: 48px;
+    color: #333;
+    text-align: center;
+    margin-top: 20px;
+}
+
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+    color: #444;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 600px;
+}
+
+   
+    p::before {
+        content: "";
+        display: block;
+        border-top: 1px solid #ddd;
+        margin: 10px auto;
+        width: 50%;
+    }
+
+
+
+

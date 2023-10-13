@@ -5,16 +5,15 @@ namespace TanejaShoeStore.Controllers
 {
     public class HelloWorldController : Controller
     {
-        // 
-        // GET: /HelloWorld/
+        
+        // to getting:/HelloWorld
 
         public IActionResult Index()
         {
             return View();
         }
 
-        // 
-        // GET: /HelloWorld/Welcome/ 
+          // to getting:/HelloWorld
 
         public string Welcome()
         {
